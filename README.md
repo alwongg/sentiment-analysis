@@ -23,13 +23,7 @@ The project explores manual fine-tuning of a Large Language Model (LLM), giving 
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-
-2. Install the required Python libraries:
+1. Install the required Python libraries:
    ```bash
    pip install -r requirements.txt
    ```
