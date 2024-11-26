@@ -67,3 +67,17 @@ Predicted sentiment: positive
 
 Dynamic Response: Thank you for your positive review! We're glad you enjoyed the movie: 'The movie was fantastic!'
 ```
+
+How to get started with a Web Interface:
+
+1. Install Flash:
+   ```bash
+   pip install flask
+   ```
+2. Create app.py that contains the Flask app that integrates with your existing python program code
+3. Create the HTML Template that will render your web page
+4. Run the Flask app with:
+   ```bash
+   python app.py
+   ```
+5. Visit http://127.0.0.1:5000 in your web browser
