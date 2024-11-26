@@ -21,7 +21,7 @@ Initially, GPT-2 was considered for this task, but GPT-2 is designed for **gener
 1. **Struggles with binary classification**: GPT-2 generates text rather than classifying inputs into discrete categories like "positive" or "negative."
 2. **Complexity in training**: GPT-2 fine-tuning required additional engineering to perform binary sentiment analysis, making it less suitable for classification tasks without significant modifications.
 
-As a result, we shifted from GPT-2 to **DistilBERT**, which is specifically suited for **classification** tasks. DistilBERT is a **transformer-based model** pre-trained for **sequence classification**, making it a more appropriate choice for binary sentiment analysis.
+As a result, I went from GPT-2 to **DistilBERT**, which is specifically suited for **classification** tasks. DistilBERT is a **transformer-based model** pre-trained for **sequence classification**, making it a more appropriate choice for binary sentiment analysis. I did not understand this and kept training GPT-2 at 100% with epoch 3 and it took 12 hours to train and in the end, always gave a negative sentiment.
 
 ## Manual Training vs. Hugging Face's Trainer API
 
@@ -30,11 +30,11 @@ Instead of using Hugging Face's **Trainer API** (which abstracts a lot of traini
 - **Data balancing**: By manually sampling and balancing the dataset, I ensured that positive and negative examples were equally represented.
 - **Custom training loop**: Manual control over epochs, optimizers, and loss functions provided a deeper understanding of how models like DistilBERT are fine-tuned.
 
-The Trainer API simplifies training but abstracts away key elements that are useful for learning purposes, such as how gradients are calculated and how weights are updated during backpropagation.
+The Trainer API simplifies training but abstracts away key elements that are useful for learning purposes, such as how gradients are calculated and how weights are updated during backpropagation. But most importantly, it didn't work for me at all because of local module errors, which forced me to find other approaches.
 
 ## Project Structure
 
-- **main.py** (or `distilbert_sentiment_analysis.py`): The main script that handles everything from loading the dataset, fine-tuning the DistilBERT model, and generating dynamic responses based on sentiment.
+- **distilbert_sentiment_analysis.py**: The main script that handles everything from loading the dataset, fine-tuning the DistilBERT model, and generating dynamic responses based on sentiment.
 - **requirements.txt**: Contains the dependencies required for this project (e.g., `torch`, `transformers`, `datasets`).
 
 ## Workflow Overview
